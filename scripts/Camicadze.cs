@@ -5,6 +5,7 @@ using UnityEngine;
 public class Camicadze : MonoBehaviour
 {
     public float speed = 1f;
+    public GameObject particles;
     private GameObject player;
     private Rigidbody rb;
 
@@ -20,12 +21,23 @@ public class Camicadze : MonoBehaviour
         rb.velocity = targ / targ.magnitude * speed;
     }
 
+    void Update()
+    {
+        transform.Translate(0f, 0f, -playerMovement.speed * Time.deltaTime);
+    }
+
     Vector3 Target()
     {
         Vector3 targ = Vector3.zero;
 
-        targ = player.transform.position;
+        targ = player.transform.position - transform.position;
 
         return targ;
+    }
+
+    void OnTriggerEnter()
+    {
+        GameObject x = GameObject.Instantiate(particles, player.transform.position + Vector3.forward * 2f, transform.rotation);
+        Destroy(x, 1f);
     }
 }

@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 533175378270473014}
   - component: {fileID: 2342662799267414012}
   - component: {fileID: 7939852126374129482}
+  - component: {fileID: 2055817055474323102}
   - component: {fileID: 3136958771351242204}
-  - component: {fileID: 1155517425420532383}
   m_Layer: 0
   m_Name: Camicadze
   m_TagString: Untagged
@@ -98,6 +98,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4988581832268361778, guid: 73e3bb8b6b333b8439b19bf7300eb08a, type: 3}
+--- !u!114 &2055817055474323102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4288045970638544425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac3275248851f854898d85be5f52b862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
 --- !u!54 &3136958771351242204
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -114,16 +127,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1155517425420532383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4288045970638544425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85d1268bd5e260e41afb14845845bb2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0

@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-    public float speed = 10.0f;
+    public static float speed = 10.0f;
     public float speedForv = 10.0f;
     public float sleep = 0.2f;
     float spawntime;
