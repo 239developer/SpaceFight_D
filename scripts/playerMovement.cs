@@ -11,6 +11,15 @@ public class playerMovement : MonoBehaviour
     public float sleep = 0.2f;
     float spawntime;
     bool flg;
+    float ShootBoost=2.5f;
+    public bool BoostShoot=false;
+    float ShootBoostTime;
+    float ShieldBoost=2.5f;
+    public bool BoostShield=false;
+    float ShieldBoostTime;
+    float DamageBoost=2.5f;
+    public bool BoostDamage=false;
+    float DamageBoostTime;
 
     private CharacterController _charController;
     public GameObject bullet;
@@ -41,6 +50,37 @@ public class playerMovement : MonoBehaviour
             flg = false;
         }
 
-
+        if (BoostShoot && Time.time-ShootBoostTime>ShootBoost)
+        {
+            sleep=0.2f;
+        }
+        if (BoostShield && Time.time-ShieldBoostTime>ShieldBoost)
+        {
+            
+        }
+        if (BoostDamge && Time.time-DamageBoostTime>DamageBoost)
+        {
+            sleep=0.2f;
+        }
+    }
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.name=="BoostShoot")
+        {
+            sleep = 0.05f;
+            ShootBoostTime=Time.time;
+            BoostShoot=true;
+        }
+        if (col.gameObject.name=="BoostShield")
+        {
+            ShieldBoostTime=Time.time;
+            BoostShield=true;
+        }
+        if (col.gameObject.name=="BoostDamage")
+        {
+            sleep=0.15f;
+            DamageBoostTime=Time.time;
+            BoostDamage=true;
+        }
     }
 }
