@@ -58,7 +58,7 @@ public class playerMovement : MonoBehaviour
         {
             
         }
-        if (BoostDamge && Time.time-DamageBoostTime>DamageBoost)
+        if (BoostDamage && Time.time-DamageBoostTime>DamageBoost)
         {
             sleep=0.2f;
         }
