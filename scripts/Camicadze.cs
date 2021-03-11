@@ -23,7 +23,7 @@ public class Camicadze : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(0f, 0f, -playerMovement.speed * Time.deltaTime);
+        transform.Translate(0f, 0f, -playerMovement.speedForv * Time.deltaTime);
     }
 
     Vector3 Target()

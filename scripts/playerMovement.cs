@@ -7,8 +7,9 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour
 {
     public static float speed = 10.0f;
-    public float speedForv = 10.0f;
+    public static float speedForv = 10.0f;
     public float sleep = 0.2f;
+    public float laserBias = 0.42f;
     float spawntime;
     bool flg;
 
@@ -33,7 +34,7 @@ public class playerMovement : MonoBehaviour
         {
             spawntime = Time.time;
             flg = true;
-            GameObject.Instantiate(bullet,transform.position-new Vector3(1.1f,-2,0),transform.rotation);
+            GameObject.Instantiate(bullet, transform.position + new Vector3(laserBias, 0f, 0f), transform.rotation);
         }
 
         if (flg && Time.time - spawntime > sleep)
