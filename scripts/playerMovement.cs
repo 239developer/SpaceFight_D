@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Security.Permissions;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerMovement : MonoBehaviour
 {
+    public static int explosionDmg = 50;
+    public static int maxHealth = 100;
+    public static int health;
     public static float speed = 10.0f;
     public static float speedForv = 10.0f;
+
     public float sleep = 0.2f;
     public float laserBias = 0.42f;
     float spawntime;
@@ -15,14 +20,20 @@ public class playerMovement : MonoBehaviour
 
     private CharacterController _charController;
     public GameObject bullet;
+    public Slider healthBar;
 
     void Start()
     {
+        health = maxHealth;
+        healthBar.maxValue = maxHealth;
+
         _charController = GetComponent<CharacterController>();
     }
 
     void Update()
-    {
+    { 
+        /* --- MOVEMENT --- */
+
         float deltaX = Input.GetAxis("Horizontal") * speed;
         Vector3 movement = new Vector3(deltaX, 0, speedForv);
         movement = Vector3.ClampMagnitude(movement, speed);
@@ -42,6 +53,8 @@ public class playerMovement : MonoBehaviour
             flg = false;
         }
 
+        /* --- HEALTH --- */
 
+        healthBar.value = health;
     }
 }

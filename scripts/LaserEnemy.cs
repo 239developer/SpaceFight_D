@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Camicadze : MonoBehaviour
+public class LaserEnemy : MonoBehaviour
 {
     public float speed = 1f;
     public GameObject particles;
