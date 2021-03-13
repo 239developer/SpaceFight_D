@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
-using System.Security.Permissions;
+// using System.Security.Cryptography;
+// using System.Security.Permissions;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playerMovement : MonoBehaviour
 {
+    public static float damage = 10f;
     public static int explosionDmg = 50, laserDPS = 20;
     public static int maxHealth = 100;
     public static float health;
@@ -41,6 +43,7 @@ public class playerMovement : MonoBehaviour
 
         if ((Input.GetButton("Jump")) && !flg || (Input.GetButton("Fire1")) && !flg)
         {
+            // SceneManager.LoadScene(0);
             spawntime = Time.time;
             flg = true;
             GameObject.Instantiate(bullet, transform.position + new Vector3(laserBias, 0f, 0f), transform.rotation);

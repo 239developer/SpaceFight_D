@@ -17,4 +17,13 @@ public class bullet : MonoBehaviour
     {
         transform.position += new Vector3(0, 0, (speed + playerMovement.speedForv) * Time.deltaTime);
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.name != "Player")
+        {
+            other.gameObject.GetComponent<EnemyHealth>().health -= playerMovement.damage;
+            Destroy(gameObject);
+        }
+    }
 }
