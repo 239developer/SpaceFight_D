@@ -4,40 +4,50 @@ using UnityEngine;
 
 public class LaserEnemy : MonoBehaviour
 {
+    public static float fireTime = 3f, reloadTime = 1f;
     public float speed = 1f;
     public GameObject particles;
-    private GameObject player;
-    private Rigidbody rb;
+    private bool isFiring;
+    private float lastChangeTime = 0f;
 
-    void Start()
+    void Fire()
     {
-        player = GameObject.Find("Player");
-        rb = GetComponent<Rigidbody>();
-    }
-
-    void FixedUpdate()
-    {
-        Vector3 targ = Target();
-        rb.velocity = targ / targ.magnitude * speed;
+        if(isFiring)
+        {
+            if(Time.time - lastChangeTime < fireTime)
+            {
+                /* - FIRE - */
+                Vector3 origin = transform.position + Vector3.up * 0.7f;
+                Vector3 direction = origin + new Vector3(0f, 0f, -10f);
+                Debug.DrawRay(origin, direction - origin, Color.red, 0.1f);
+            }
+            else
+            {
+                lastChangeTime = Time.time;
+                isFiring = false;
+                //destroy laser
+            }
+        }
+        else
+        {
+            if(Time.time - lastChangeTime >= reloadTime)
+            {
+                lastChangeTime = Time.time;
+                isFiring = true;
+                //Spawn laser
+            }
+        }
     }
 
     void Update()
     {
         transform.Translate(0f, 0f, -playerMovement.speedForv * Time.deltaTime);
-    }
-
-    Vector3 Target()
-    {
-        Vector3 targ = Vector3.zero;
-
-        targ = player.transform.position - transform.position;
-
-        return targ;
+        Fire();
     }
 
     void OnTriggerEnter(Collider other)
     {
-        GameObject x = GameObject.Instantiate(particles, player.transform.position + Vector3.forward * 2f, transform.rotation);
+        GameObject x = GameObject.Instantiate(particles, other.gameObject.transform.position + Vector3.forward * 2f, transform.rotation);
         Destroy(x, 2.5f);
         Destroy(gameObject);
         if(other.name == "Player")
