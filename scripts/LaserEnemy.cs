@@ -4,11 +4,23 @@ using UnityEngine;
 
 public class LaserEnemy : MonoBehaviour
 {
-    public static float fireTime = 3f, reloadTime = 1f;
+    public static float fireTime = 5f, reloadTime = 3f;
     public float speed = 1f;
-    public GameObject particles;
+    public GameObject shell, particles;
     private bool isFiring;
     private float lastChangeTime = 0f;
+    private GameObject laser;
+
+    void Hit(GameObject other)
+    {
+        GameObject x = GameObject.Instantiate(particles, other.transform.position + Vector3.forward * 2f, transform.rotation);
+        Destroy(x, 2.5f);
+        // Destroy(gameObject);
+        if(other.name == "Player")
+        {
+            playerMovement.health -= playerMovement.laserDPS * Time.deltaTime;
+        }
+    }
 
     void Fire()
     {
@@ -18,14 +30,22 @@ public class LaserEnemy : MonoBehaviour
             {
                 /* - FIRE - */
                 Vector3 origin = transform.position + Vector3.up * 0.7f;
-                Vector3 direction = origin + new Vector3(0f, 0f, -10f);
-                Debug.DrawRay(origin, direction - origin, Color.red, 0.1f);
+                Vector3 direction = new Vector3(0f, 0f, -25f);
+                float radius = 0.125f;
+                RaycastHit info;
+                if(Physics.SphereCast(origin, radius, direction, out info))
+                {
+                    Hit(info.collider.gameObject);
+                }
+
+                Debug.DrawRay(origin, direction, Color.red, 0.1f);
             }
             else
             {
                 lastChangeTime = Time.time;
                 isFiring = false;
                 //destroy laser
+                Destroy(laser);
             }
         }
         else
@@ -35,6 +55,7 @@ public class LaserEnemy : MonoBehaviour
                 lastChangeTime = Time.time;
                 isFiring = true;
                 //Spawn laser
+                laser = GameObject.Instantiate(shell, transform.position + new Vector3(0f, 0f, -15f), transform.rotation);
             }
         }
     }
@@ -43,16 +64,5 @@ public class LaserEnemy : MonoBehaviour
     {
         transform.Translate(0f, 0f, -playerMovement.speedForv * Time.deltaTime);
         Fire();
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        GameObject x = GameObject.Instantiate(particles, other.gameObject.transform.position + Vector3.forward * 2f, transform.rotation);
-        Destroy(x, 2.5f);
-        Destroy(gameObject);
-        if(other.name == "Player")
-        {
-            playerMovement.health -= playerMovement.explosionDmg;
-        }
     }
 }

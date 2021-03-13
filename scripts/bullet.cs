@@ -7,30 +7,14 @@ using UnityEngine;
 public class bullet : MonoBehaviour
 {
     public float speed; 
-    int a;
-    float starttime;
-    bool flg = false;
 
     void Start()
     {
-        starttime = Time.time;
+        Destroy(gameObject, 5);
     }
 
     void Update()
     {
-        
-        if(Time.time-starttime<5)
-        {
-           
-            transform.position += new Vector3(0, 0, speed);
-        }
-        else
-        {
-            Destroy(gameObject);
-            flg = false;
-        }
-
-        
-
+        transform.position += new Vector3(0, 0, (speed + playerMovement.speedForv) * Time.deltaTime);
     }
 }

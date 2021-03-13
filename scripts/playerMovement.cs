@@ -7,9 +7,9 @@ using UnityEngine.UI;
 
 public class playerMovement : MonoBehaviour
 {
-    public static int explosionDmg = 50;
+    public static int explosionDmg = 50, laserDPS = 20;
     public static int maxHealth = 100;
-    public static int health;
+    public static float health;
     public static float speed = 10.0f;
     public static float speedForv = 10.0f;
 
@@ -36,9 +36,7 @@ public class playerMovement : MonoBehaviour
 
         float deltaX = Input.GetAxis("Horizontal") * speed;
         Vector3 movement = new Vector3(deltaX, 0, speedForv);
-        movement = Vector3.ClampMagnitude(movement, speed);
         movement *= Time.deltaTime;
-        movement = transform.TransformDirection(movement);
         _charController.Move(movement);
 
         if ((Input.GetButton("Jump")) && !flg || (Input.GetButton("Fire1")) && !flg)
@@ -55,6 +53,8 @@ public class playerMovement : MonoBehaviour
 
         /* --- HEALTH --- */
 
+        if(health < 0f)
+            health = 0f;
         healthBar.value = health;
     }
 }
