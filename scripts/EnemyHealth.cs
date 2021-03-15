@@ -13,7 +13,7 @@ public class EnemyHealth : MonoBehaviour
         {
             var x = GameObject.Instantiate(particles, transform.position, transform.rotation);
             Destroy(gameObject);
-            Destroy(x, 3f);
+            Destroy(x, 2.5f);
             Debug.Log("DED");
         }
     }

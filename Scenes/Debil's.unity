@@ -10188,6 +10188,25 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &1036203402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4288045970638544425, guid: caa473e82b7b1fb44a50ab4670cc5e77, type: 3}
+  m_PrefabInstance: {fileID: 1235999014}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1036203403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036203402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834ae85491d505a40aba61f491a38b1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 15
+  particles: {fileID: 1551542369861868782, guid: 06fb2daa6e8e116428c6cd336f4db80c, type: 3}
 --- !u!1 &1053051103
 GameObject:
   m_ObjectHideFlags: 0
@@ -10340,7 +10359,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4288045970638544425, guid: caa473e82b7b1fb44a50ab4670cc5e77, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288045970638544425, guid: caa473e82b7b1fb44a50ab4670cc5e77, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7939852126374129482, guid: caa473e82b7b1fb44a50ab4670cc5e77, type: 3}
       propertyPath: m_IsTrigger
@@ -10602,6 +10625,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f3e8a2e1b93cded46a770f8e404a3d83, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3e8a2e1b93cded46a770f8e404a3d83, type: 3}
 --- !u!1 &1395632277
@@ -10779,7 +10806,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -214.4, y: -142.5}
+  m_AnchoredPosition: {x: -214.5, y: -142.5}
   m_SizeDelta: {x: 550, y: 81.099976}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1461940291
@@ -11090,7 +11117,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1877230685
 Light:
   m_ObjectHideFlags: 0
@@ -11215,6 +11242,10 @@ PrefabInstance:
     - target: {fileID: 6102937237620833434, guid: c6db3727249044c4db516ba80ed0a7ee, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102937237620833434, guid: c6db3727249044c4db516ba80ed0a7ee, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6372757045802271182, guid: c6db3727249044c4db516ba80ed0a7ee, type: 3}
       propertyPath: m_IsTrigger

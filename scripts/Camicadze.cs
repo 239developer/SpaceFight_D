@@ -37,12 +37,15 @@ public class Camicadze : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        GameObject x = GameObject.Instantiate(particles, player.transform.position + Vector3.forward * 2f, transform.rotation);
-        Destroy(x, 2.5f);
-        Destroy(gameObject);
-        if(other.name == "Player")
+        if(other.tag != "Enemy" && other.name != "laser 2(Clone)")
         {
-            playerMovement.health -= playerMovement.explosionDmg;
+            GameObject x = GameObject.Instantiate(particles, other.gameObject.transform.position + Vector3.forward * 2f, transform.rotation);
+            Destroy(x, 2.5f);
+            Destroy(gameObject);
+            if(other.name == "Player")
+            {
+                playerMovement.health -= playerMovement.explosionDmg;
+            }
         }
     }
 }

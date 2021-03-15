@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class playerMovement : MonoBehaviour
 {
-    public static float damage = 10f;
+    public static float damage = 5f;
     public static int explosionDmg = 50, laserDPS = 20;
     public static int maxHealth = 100;
     public static float health;
@@ -62,5 +62,10 @@ public class playerMovement : MonoBehaviour
         if(health < 0f)
             health = 0f;
         healthBar.value = health;
+
+        if(health <= 0f)
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }
