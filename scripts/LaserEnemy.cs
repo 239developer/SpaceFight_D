@@ -56,6 +56,7 @@ public class LaserEnemy : MonoBehaviour
                 isFiring = true;
                 //Spawn laser
                 laser = GameObject.Instantiate(shell, transform.position + new Vector3(0f, 0f, -15f), transform.rotation);
+                laser.GetComponent<bullet>().ship = gameObject;
             }
         }
     }

@@ -7,6 +7,7 @@ using UnityEngine;
 public class bullet : MonoBehaviour
 {
     public float speed; 
+    public GameObject ship;
 
     void Start()
     {
@@ -16,6 +17,8 @@ public class bullet : MonoBehaviour
     void Update()
     {
         transform.position += new Vector3(0, 0, (speed + playerMovement.speedForv) * Time.deltaTime);
+        if(ship == null)
+            Destroy(gameObject);
     }
 
     void OnTriggerEnter(Collider other)

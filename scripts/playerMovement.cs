@@ -41,12 +41,15 @@ public class playerMovement : MonoBehaviour
         movement *= Time.deltaTime;
         _charController.Move(movement);
 
+        /* --- FIRING --- */
+
         if ((Input.GetButton("Jump")) && !flg || (Input.GetButton("Fire1")) && !flg)
         {
             // SceneManager.LoadScene(0);
             spawntime = Time.time;
             flg = true;
-            GameObject.Instantiate(bullet, transform.position + new Vector3(laserBias, 0f, 0f), transform.rotation);
+            var shot = GameObject.Instantiate(bullet, transform.position + new Vector3(laserBias, 0f, 0f), transform.rotation);
+            shot.GetComponent<bullet>().ship = gameObject;
         }
 
         if (flg && Time.time - spawntime > sleep)
