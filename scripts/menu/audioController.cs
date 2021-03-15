@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class audio : MonoBehaviour
+public class audioController : MonoBehaviour
 {
     public static int clip = 0;
     public static float musicVolume = 1f;
@@ -13,7 +13,6 @@ public class audio : MonoBehaviour
     void Start()
     {
         music.clip = clips[clip];
-        music.volume = musicVolume;
         music.time = musicTime;
         music.Play();
     }
@@ -21,5 +20,6 @@ public class audio : MonoBehaviour
     void Update()
     {
         musicTime = music.time;
+        music.volume = musicVolume;
     }
 }
