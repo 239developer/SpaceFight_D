@@ -13,13 +13,15 @@ GameObject:
   - component: {fileID: 5742372533182340431}
   - component: {fileID: 6372757045802271177}
   - component: {fileID: 6372757045802271182}
+  - component: {fileID: 919132148934597161}
+  - component: {fileID: 919132148934597162}
   m_Layer: 0
   m_Name: LaserEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6915890453264262688
 Transform:
   m_ObjectHideFlags: 0
@@ -29,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 6102937237620833434}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -0, y: 1.83, z: 5.87}
-  m_LocalScale: {x: 0.58972, y: 0.58972, z: 0.58972}
+  m_LocalScale: {x: 0.9722124, y: 0.9722124, z: 0.9722124}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -113,3 +115,32 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -8213443026856553256, guid: 0aee382132cebba41b3b8df4d62035e1, type: 3}
+--- !u!114 &919132148934597161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6102937237620833434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e33d559b7ef5a7d43aa14093683e2373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  shell: {fileID: 4172868864296155074, guid: 7389f530faf9505469302781a3548c0f, type: 3}
+  particles: {fileID: 1551542369861868782, guid: ba013ed85e2289d4680e5b2492f9e872, type: 3}
+--- !u!114 &919132148934597162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6102937237620833434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834ae85491d505a40aba61f491a38b1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 25
+  particles: {fileID: 1551542369861868782, guid: 06fb2daa6e8e116428c6cd336f4db80c, type: 3}

@@ -20,7 +20,7 @@ public class RoadSpawner : MonoBehaviour {
 
 	void Start ()
     {
-        startBlockXPos = PlayerTransf.position.z + 15;
+        startBlockXPos = PlayerTransf.position.x + 17f;
         blockLength = 10;
 
         StartGame();
