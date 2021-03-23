@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class playerMovement : MonoBehaviour
 {
     public static float damage = 3.33f;
-    public static int explosionDmg = 50, laserDPS = 20, rocketDmg = 34;
+    public static int explosionDmg = 50, laserDPS = 20, rocketDmg = 34, laserDmg = 3;
     public static int maxHealth = 100;
     public static float health;
     public static float speed = 10.0f;
