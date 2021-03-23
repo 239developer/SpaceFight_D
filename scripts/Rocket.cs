@@ -6,7 +6,7 @@ public class Rocket : MonoBehaviour
 {
     public GameObject player, particles;
     public static float speed = 5f;
-    public static float degreesPerSecond = 60f;
+    public static float degreesPerSecond = 30f;
 
     void Start()
     {
