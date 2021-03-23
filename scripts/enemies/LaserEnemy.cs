@@ -7,7 +7,7 @@ public class LaserEnemy : MonoBehaviour
     public static float fireTime = 5f, reloadTime = 3f;
     public float speed = 1f;
     public GameObject shell, particles;
-    private bool isFiring;
+    private bool isFiring = false;
     private float lastChangeTime = 0f;
     private GameObject laser;
 
@@ -59,6 +59,11 @@ public class LaserEnemy : MonoBehaviour
                 laser.GetComponent<bullet>().ship = gameObject;
             }
         }
+    }
+
+    void Start()
+    {
+        lastChangeTime = Time.time;
     }
 
     void Update()
