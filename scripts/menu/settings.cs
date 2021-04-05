@@ -16,4 +16,9 @@ public class settings : MonoBehaviour
     {
         audioController.musicVolume = music.value;
     }
+
+    void ChangeMusic()
+    {
+
+    }
 }
