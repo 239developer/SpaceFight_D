@@ -61,6 +61,8 @@ public class playerMovement : MonoBehaviour
 
         float s = steering.value - steering.maxValue / 2f;
         float moveX = Math.Sign(s) * Math.Sign(Mathf.Floor(Math.Abs(s)));
+        if(!steering.GetComponent<button>().buttonPressed)
+            steering.value += steering.maxValue / 2f - steering.value;
         
         /* --- MOVEMENT --- */
 
