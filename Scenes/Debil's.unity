@@ -10682,7 +10682,7 @@ RectTransform:
   m_GameObject: {fileID: 1273047148}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.343578, y: 1.343578, z: 1.343578}
   m_Children:
   - {fileID: 1730784700}
   - {fileID: 677554169}
@@ -10768,6 +10768,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1282911294}
   - component: {fileID: 1282911293}
+  - component: {fileID: 1282911295}
   m_Layer: 0
   m_Name: Directional Light (1)
   m_TagString: Untagged
@@ -10850,6 +10851,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 49.210003, y: 68.642006, z: 102.135}
+--- !u!114 &1282911295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282911292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf09f7f14355c684ba6a69677a313943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyes:
+  - {fileID: 4288045970638544425, guid: caa473e82b7b1fb44a50ab4670cc5e77, type: 3}
+  - {fileID: 6102937237620833434, guid: c6db3727249044c4db516ba80ed0a7ee, type: 3}
+  - {fileID: 3193037688270254548, guid: 76abc444f49c61f409167ded886f30d3, type: 3}
+  - {fileID: 9005256414699422297, guid: e4112e158f55bdf4a96dc30ff85ad513, type: 3}
+  PlayerPos: {fileID: 1454007132}
 --- !u!1 &1293647964
 GameObject:
   m_ObjectHideFlags: 0
